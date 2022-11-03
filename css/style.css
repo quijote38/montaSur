@@ -1,9 +1,82 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    background-color: #2929aa8e;
+body {
+  background-color: #25c3eb2a;
 }
+
+.tipografia {
+  font-family: "Permanent Marker", cursive;
+  color: #25c3ebb9;
+
+  font-size: 30px;
+  margin: 20px;
+}
+
+.pagContenedora {
+  border: 1px solid #142ea1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+h3{
+    font-size: 15px;
+}
+
+.productoContainer {
+  margin: 20px;
+  padding: 2px 16px;
+  position: relative;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  background-color: #25c3eb36;
+}
+.productoContainer :hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.productoContainer img {
+  width: 300px;
+  height: 300px;
+  padding: 2px 16px;
+}
+
+.productoContainer h3 {
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+
+.efecBoton {
+  transition-duration: 0.4s;
+  border-radius: 10px;
+  padding: 15px 32px;
+  text-align: center;
+  font-size: 15px;
+  background-color: #249ac9d3;
+  color: black;
+  border: 2px solid #229fd1;
+  position: absolute;
+  right: 15px;
+  bottom: 10px;
+}
+
+.efecBoton:hover {
+  background-color: #0a1ed4;
+  color: white;
+}
+
+footer {
+   
+
+    background-image: linear-gradient(to left, #808080, #918c8c); }
+    
+footer div{
+    display: flex;
+
+
+}
+      
+  
