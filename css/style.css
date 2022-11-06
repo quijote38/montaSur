@@ -4,8 +4,17 @@
   box-sizing: border-box;
 }
 
+
+
+
 body {
   background-color: #25c3eb2a;
+}  
+
+.botonNav{
+  background-color: #25c3eb00;
+  border: none;
+ 
 }
 
 .tipografia {
