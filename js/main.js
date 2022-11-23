@@ -1,4 +1,4 @@
-let order = [];
+let order = JSON.parse(localStorage.getItem("order")) || [];
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("DOM está cargado");
@@ -24,6 +24,7 @@ borrarLista.addEventListener ('click', (evt)=>{
 
       order.push({title,price})
       subiendoCarrito()
+      localSto ();
     });
   }
 });
@@ -41,5 +42,10 @@ function subiendoCarrito(){
     ul.innerHTML = html
 
 }
-  
+
+const localSto = () =>{
+ localStorage.setItem ("mochilas", JSON.stringify(order));
+}
+
+
 
