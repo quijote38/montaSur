@@ -77,10 +77,14 @@ h3{
   background-color: #249ac9d3;
   color: black;
   border: 2px solid #229fd1;
-  position: absolute;
-  right: 15px;
-  bottom: 10px;
+ 
+ 
 }
+
+/* 
+ position: absolute;
+right: 15px;
+bottom: 10px; */
 
 .efecBoton:hover {
   background-color: #0a1ed4;

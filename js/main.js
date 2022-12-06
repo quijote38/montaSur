@@ -1,51 +1,69 @@
-let order = JSON.parse(localStorage.getItem("order")) || [];
+const elHtml = document.getElementById("javascriptHtml");
+const agregandoCar = document.getElementById("imgCar");
+const containerCarrito = document.getElementById("container-carrito"
+);
 
-document.addEventListener("DOMContentLoaded", () => {
-  console.log("DOM está cargado");
+let carrito = [];
 
-let borrarLista = document.querySelector ("#linStartOver")
+productos.forEach((producto) => {
+  let contenido = document.createElement("div");
+  contenido.className = "productoContainer mochilas";
+  contenido.innerHTML = `
 
-borrarLista.addEventListener ('click', (evt)=>{
-    evt.preventDefault()
-    order= [];
-    subiendoCarrito ()
+        <h3> ${producto.nombre} </h3>
+        <img src= " ${producto.img}">
+        <p> ${producto.precio}</p>
 
-})
+`;
+  elHtml.append(contenido);
 
+  let agregar = document.createElement("button");
+  agregar.innerText = "agregar";
+  agregar.className = "efecBoton";
 
-  const mochila = document.querySelectorAll(".mochilas");
+  contenido.append(agregar);
 
-  for (let mochilas of mochila) {
-    mochilas.addEventListener("click", (evento) => {
-      //console.log (evento.currentTarget.dataset.title)
-      //console.log (evento.currentTarget.dataset.price)
-      let title = evento.currentTarget.dataset.title
-      let price = evento.currentTarget.dataset.price
-
-      order.push({title,price})
-      subiendoCarrito()
-      localSto ();
+  agregar.addEventListener("click", () => {
+    carrito.push({
+      img: producto.img,
+      nombre: producto.nombre,
+      precio: producto.precio,
     });
-  }
+    console.log(carrito);
+  });
 });
 
 
-function subiendoCarrito(){
-    let html = "";
-    for (let mochilas of order){
-        html += `
-        <li>${mochilas.title} <strong>  ${mochilas.price} </strong></li>
-        `
-    }
-
-    let ul= document.querySelector ("#carrito ul")
-    ul.innerHTML = html
-
-}
-
-const localSto = () =>{
- localStorage.setItem ("mochilas", JSON.stringify(order));
-}
 
 
+agregandoCar.addEventListener("click", ()=> {
+  const pagCarHeader = document.createElement("div");
+  pagCarHeader.className = "headerPag";
+  pagCarHeader.innerHTML = `<h1 class= "headerPagTitulo">Cesta</h1>`;
+  containerCarrito.append(pagCarHeader);
 
+  const pagCarBoton = document.createElement("h2");
+  pagCarBoton.innerText = "X";
+  pagCarBoton.className = "botonPag";
+  pagCarHeader.append(pagCarBoton);
+
+  carrito.forEach((producto) => {
+    let contenidoCar = document.createElement("div");
+    contenidoCar.className = "carritoContenidoPag";
+    contenidoCar.innerHTML = `
+<img src= "${producto.img}">
+<h3>${producto.nombre}</h3>
+<p>${producto.precio} $</p>`;
+
+containerCarrito.append(contenidoCar);
+  });
+
+const total= carrito.reduce ((acc, el) => acc + el.precio, 0);
+
+const compraTotal = document.createElement ("div")
+compraTotal.className = "totalPag"
+compraTotal.innerHTML = `tiene que pagar: ${total} `
+containerCarrito.append(compraTotal);
+});
+
+/* https://www.youtube.com/watch?v=qSkXVDZwQ2I  47:29*/
