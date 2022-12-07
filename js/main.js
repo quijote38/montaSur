@@ -1,7 +1,7 @@
 const elHtml = document.getElementById("javascriptHtml");
 const agregandoCar = document.getElementById("imgCar");
-const containerCarrito = document.getElementById("container-carrito"
-);
+const containerCarrito = document.getElementById("container-carrito");
+const circuloCantidad = document.getElementById ("circuloCantidad");
 
 let carrito = [];
 
@@ -24,46 +24,27 @@ productos.forEach((producto) => {
   contenido.append(agregar);
 
   agregar.addEventListener("click", () => {
+    const repeat = carrito.some ((repeatProducto)=> repeatProducto.id === producto.id);
+      
+    if (repeat){
+      carrito.map ((prod) => {
+       if  (prod.id === producto.id){
+        prod.cantidad ++; 
+       }
+      });
+    } else {
     carrito.push({
+      id: producto.id,
       img: producto.img,
       nombre: producto.nombre,
       precio: producto.precio,
+      cantidad: producto.cantidad,
     });
+  }
     console.log(carrito);
+    // circuloCarrito();
   });
 });
 
 
 
-
-agregandoCar.addEventListener("click", ()=> {
-  const pagCarHeader = document.createElement("div");
-  pagCarHeader.className = "headerPag";
-  pagCarHeader.innerHTML = `<h1 class= "headerPagTitulo">Cesta</h1>`;
-  containerCarrito.append(pagCarHeader);
-
-  const pagCarBoton = document.createElement("h2");
-  pagCarBoton.innerText = "X";
-  pagCarBoton.className = "botonPag";
-  pagCarHeader.append(pagCarBoton);
-
-  carrito.forEach((producto) => {
-    let contenidoCar = document.createElement("div");
-    contenidoCar.className = "carritoContenidoPag";
-    contenidoCar.innerHTML = `
-<img src= "${producto.img}">
-<h3>${producto.nombre}</h3>
-<p>${producto.precio} $</p>`;
-
-containerCarrito.append(contenidoCar);
-  });
-
-const total= carrito.reduce ((acc, el) => acc + el.precio, 0);
-
-const compraTotal = document.createElement ("div")
-compraTotal.className = "totalPag"
-compraTotal.innerHTML = `tiene que pagar: ${total} `
-containerCarrito.append(compraTotal);
-});
-
-/* https://www.youtube.com/watch?v=qSkXVDZwQ2I  47:29*/
