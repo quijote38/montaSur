@@ -36,7 +36,7 @@ body {
 }
 
 .pagContenedora {
-  border: 1px solid #142ea1;
+  /* border: 1px solid #142ea1; */
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -179,14 +179,13 @@ footer div{
   cursor: pointer;
 }
 
-/* .circulo-cantidad{
-  background-color: red;
+.circulo-carrito{
+  background-color: rgba(255, 0, 0, 0.808);
   color: white;
   border-radius: 50%;
   font-size: 12px;
-  padding: 4px;
-  top: 37px;
-  right: 14px;
+  padding: 8px;
   position: absolute;
   display: none;
-} */
+  flex-direction: column;
+}

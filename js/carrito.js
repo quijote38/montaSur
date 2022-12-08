@@ -23,8 +23,7 @@ const pintaCarrito = () => {
   <h3>${producto.nombre}</h3>
   <p>${producto.precio} $</p>
   <p> Cantidad: ${producto.cantidad} </p>
-  <p> Total: ${producto.cantidad * producto.precio} </p>`
-  ;
+  <p> Total: ${producto.cantidad * producto.precio} </p>`;
 
     containerCarrito.append(contenidoCar);
 
@@ -32,8 +31,7 @@ const pintaCarrito = () => {
     eliminando.innerText = "X";
     eliminando.className = "borrarProducto";
     contenidoCar.append(eliminando);
-    eliminando.addEventListener ("click", eliminarProducto);
-
+    eliminando.addEventListener("click", eliminarProducto);
   });
 
   const total = carrito.reduce((acc, el) => acc + el.precio * el.cantidad, 0);
@@ -47,22 +45,25 @@ const pintaCarrito = () => {
 agregandoCar.addEventListener("click", pintaCarrito);
 
 const eliminarProducto = () => {
-    const foundId = carrito.find ((element) => element.id);
+  const foundId = carrito.find((element) => element.id);
 
-    carrito = carrito.filter ((carritoId) =>{
-        return carritoId !== foundId;
-    });
+  carrito = carrito.filter((carritoId) => {
+    return carritoId !== foundId;
+  });
 
-    pintaCarrito();
+  contenedorCirculo();
+  salvandoLocal ();
+  pintaCarrito();
 };
 
-
-// const circuloCarrito = () => {
-//     circuloCantidad.style.display= "block";
-//     circuloCantidad.innerText = carrito.length;
-    
-//   } 
+const contenedorCirculo = () => {
+  circuloCarrito.style.display = "block";
+  const carritoLe= carrito.length;
+  localStorage.setItem ("carritoLe", JSON.stringify(carritoLe))
   
+  circuloCarrito.innerText = JSON.parse(localStorage.getItem("carritoLe"));
+};
+
+contenedorCirculo ();
 
 
-//agregandoCar.addEventListener("click", ()=> {    })

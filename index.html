@@ -20,6 +20,9 @@
     <!-- ICON -->
     <link rel="shortcut icon" href="./img/logo.png" />
 
+    <!-- LIBRERIA -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css" />
     <title>montaSur</title>
@@ -61,14 +64,15 @@
 
     <ul id="javascriptHtml" class="pagContenedora"></ul>
 
-    <button class="botonNav" id="imgCar"> 
+    <button class="botonNav" id="imgCar">
       <script src="https://cdn.lordicon.com/qjzruarw.js"></script>
       <lord-icon
         src="https://cdn.lordicon.com/cllunfud.json"
         trigger="hover"
-        style="width: 60px; height: 60px" > 
-       
-      </lord-icon> 
+        style="width: 60px; height: 60px"
+      >
+      </lord-icon>
+      <span id="circuloCarrito" class="circulo-carrito"></span>
     </button>
 
     <div class="contenedorAgregandoCar" id="container-carrito"></div>
@@ -78,8 +82,16 @@
       integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
       crossorigin="anonymous"
     ></script>
-    
-    <script src="js/productos.js"></script>
+
+    <footer>
+      <div class="row1 bg-secondary p-5 text-white">
+        <p class="col">Contactanos</p>
+        <p class="col">CopyRight del viaje</p>
+        <p class="col">Redes Sociales</p>
+      </div>
+    </footer>
+
+    <script src="./productos.json"></script>
     <script src="js/main.js"></script>
     <script src="js/carrito.js"></script>
   </body>
