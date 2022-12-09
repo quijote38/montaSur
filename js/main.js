@@ -3,11 +3,11 @@ const agregandoCar = document.getElementById("imgCar");
 const containerCarrito = document.getElementById("container-carrito");
 const circuloCarrito = document.getElementById("circuloCarrito");
 
-// swal({
-//   title: "Bienvenido",
-//   text: "Estás por comprar las mejores marcas para acampar",
-//   button: "¡Vamos!"
-// })
+swal({
+  title: "Bienvenido",
+  text: "Estás por comprar las mejores marcas para acampar",
+  button: "¡Vamos!"
+})
 
 let carrito = JSON.parse(localStorage.getItem ("montaSur")) || [];
 
