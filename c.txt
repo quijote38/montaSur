@@ -1,9 +1,0 @@
-<span id="cantidadCarrito" class="cantidad-carrito"></span>
-<span id="circuloCarrito" class="circulo-carrito"></span>
-
-const carritoCounter
-const contenedorCirculo
-
-
-const saveLocal
-const salvandoLocal
